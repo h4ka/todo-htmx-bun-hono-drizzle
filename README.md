@@ -11,6 +11,10 @@ Create a `.env` file
 ```
 PORT=3049
 ```
+Create SQLite DB + Generate and apply migrations + insert seed data
+```
+bun run db:init
+```
 
 ### Start
 Everything should be set up now! All we have left to do is run:

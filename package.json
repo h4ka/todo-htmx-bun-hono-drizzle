@@ -1,11 +1,11 @@
 {
   "name": "hono",
   "scripts": {
-    "dev": "bun run --hot src/index.tsx"
     "dev": "bun run --hot src/index.tsx",
     "db:init": "bun run db:generate --name=init && bun run db:migrate && bun run db:seed",
     "db:generate": "bunx drizzle-kit generate --dialect=sqlite --schema=src/db/schema --name=${npm_config_name}",
     "db:migrate": "bun run src/db/migrate.ts",
+    "db:seed": "bun run src/db/seed.ts",
     "update:check": "bun outdated",
     "update:latest": "bun update --latest"
   },
