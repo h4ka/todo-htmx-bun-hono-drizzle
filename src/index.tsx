@@ -4,8 +4,8 @@ import {serveStatic} from "hono/bun";
 
 const app = new Hono()
 
-app.use('/public/scripts/tailwind.min.js', serveStatic({path: './public/scripts/tailwind.min.js'}))
 app.use('/public/scripts/htmx.min.js', serveStatic({path: './public/scripts/htmx.min.js'}))
+app.use('/src/styles.css', serveStatic({path: './src/styles.css'}))
 
 app.get('/', (c) => {
     return c.html(<Home/>);
