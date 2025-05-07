@@ -1,6 +1,7 @@
 import {Hono} from 'hono'
 import Home from './views/pages/home';
 import {serveStatic} from "hono/bun";
+import todoRoute from "./controllers/api/todos";
 
 const app = new Hono()
 
@@ -14,6 +15,8 @@ app.get('/', (c) => {
 app.notFound((c) => {
     return c.text('Custom 404 Message', 404)
 })
+
+app.route('/api/todos', todoRoute)
 
 export default {
     port: process.env.PORT || 3000,

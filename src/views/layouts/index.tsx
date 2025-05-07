@@ -1,14 +1,15 @@
 import {JSX} from "hono/dist/types/jsx/base";
 import {css, Style} from "hono/css";
 
-export default function Layout({children}: { children: JSX.Element }) {
+export default function Layout({children}: { children: JSX.Element | JSX.Element[] }) {
     const bodyStyle = css`
+        margin: 0;
+        padding: 1rem;
         width: 100vw;
-        height: 100vh;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
     `
-
     return (
         <html lang="en">
         <head>

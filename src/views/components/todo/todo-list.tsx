@@ -1,7 +1,11 @@
-import {JSX} from "hono/dist/types/jsx/base";
-
-export default async function TodoList({children}: { children: JSX.Element | JSX.Element[]}) {
-    return <ul role="list">
-        {children}
-    </ul>
+export default async function TodoList() {
+    return <>
+        <h3>Todos: </h3>
+        <ul
+            hx-get="/api/todos"
+            hx-trigger="load, todo-delete from:body"
+            id="todo-list"
+            role="list">
+        </ul>
+    </>
 }
