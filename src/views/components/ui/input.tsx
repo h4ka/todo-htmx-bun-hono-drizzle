@@ -5,15 +5,22 @@ type HtmxInputProps = {
     required: boolean;
     inputStyle?: string;
     placeholder?: string;
+    id: string;
+    name: string;
 }
 
-export function HtmxInput({
-                              type,
-                              required,
-                              inputStyle,
-                              placeholder = "add custom placeholder"
-                          }: HtmxInputProps) {
+export default function HtmxInput(
+    {
+        type,
+        required,
+        inputStyle,
+        placeholder = "add custom placeholder",
+        id,
+        name,
+    }: HtmxInputProps) {
     return <input
+        id={id}
+        name={name}
         type={type}
         className={cx(styles.input, inputStyle)}
         placeholder={placeholder}

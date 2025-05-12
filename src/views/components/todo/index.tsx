@@ -1,17 +1,27 @@
 import HtmxCard from "../ui/card";
 import HtmxList from "../ui/ul";
-import {HtmxButton} from "../ui/button";
+import HtmxButton from "../ui/button";
 import HtmxForm from "../ui/form";
-import {HtmxInput} from "../ui/input";
+import HtmxInput from "../ui/input";
 import {css} from "hono/css";
 
-export function TodoCard() {
+export default function TodoCard() {
     return <HtmxCard>
-        <HtmxForm>
-            <HtmxInput type="text" required={true} placeholder="write a new task here"/>
+        <HtmxForm
+            htmxProps={htmxProps.form}
+            enctype="application/x-www-form-urlencoded"
+        >
+            <HtmxInput
+                id="content"
+                name="content"
+                type="text"
+                required={true}
+                placeholder="write a new task here"
+            />
             <HtmxButton type="submit">Add</HtmxButton>
         </HtmxForm>
         <HtmxList
+            id="todo-list"
             htmxProps={htmxProps.list}
             listStyle={styles.list}
         />
@@ -22,7 +32,11 @@ const htmxProps = {
     list: {
         "hx-get": "/api/todos",
         "hx-trigger": "load, todo-delete from:body",
-        id: "todo-list",
+    },
+    form: {
+        "hx-post": "/api/todos",
+        "hx-target": "#todo-list",
+        "hx-swap": "beforeend",
     }
 }
 

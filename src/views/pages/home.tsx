@@ -1,8 +1,8 @@
 import {css} from 'hono/css'
 import Layout from '../layouts';
-import {TodoCard} from "../components/todo";
+import TodoCard from "../components/todo";
 
-export default async function Home() {
+export default function Home() {
     return (
         <Layout>
             <nav>Navbar coming soon...</nav>

@@ -14,8 +14,10 @@ todoRoute
         );
     })
     .post("/", async c => {
-        const {content} = await c.req.json();
-        const results = await addTodo(content)
+        const data = await c.req.formData();
+        const content = data.get("content");
+        const results = await addTodo(content);
+
         if (!results || results.length < 1) {
             return c.html(<></>);
         }

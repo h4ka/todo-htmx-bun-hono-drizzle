@@ -9,7 +9,7 @@ type HtmxButtonProp = {
     type?: "button" | "submit" | "reset";
 }
 
-export function HtmxButton({children, buttonStyle, htmxProps, type = "button"}: HtmxButtonProp) {
+export default function HtmxButton({children, buttonStyle, htmxProps, type = "button"}: HtmxButtonProp) {
     return <button
         type={type}
         className={cx(styles.button, buttonStyle)}

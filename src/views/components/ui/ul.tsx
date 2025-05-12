@@ -5,12 +5,14 @@ type HtmxListProps = {
     htmxProps: HtmxProps,
     containerStyle?: string,
     listStyle?: Promise<string>,
+    id: string,
 }
 
-export default async function HtmxList({htmxProps, containerStyle, listStyle}: HtmxListProps) {
+export default function HtmxList({htmxProps, containerStyle, listStyle, id}: HtmxListProps) {
     return <div class={cx(styles.container, containerStyle)}>
         <ul
             {...htmxProps}
+            id={id}
             role="list"
             class={cx(styles.list, listStyle)}
         >
