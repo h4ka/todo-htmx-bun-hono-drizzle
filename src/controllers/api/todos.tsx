@@ -1,14 +1,12 @@
 import {Hono} from "hono";
-import {db} from "../../db";
-import {todos} from "../../db/schema/todos";
 import HtmxListItem from "../../views/components/ui/li";
+import {addTodo, listTodos} from "../../models/todos";
 
 const todoRoute = new Hono()
 
 todoRoute
     .get("/", async c => {
-        const results = await db.select().from(todos);
-
+        const results = await listTodos()
         return c.html(
             <>
                 {results.map(todo => <HtmxListItem>{todo.content}</HtmxListItem>)}
@@ -17,7 +15,7 @@ todoRoute
     })
     .post("/", async c => {
         const {content} = await c.req.json();
-        const results = await db.insert(todos).values({content}).returning();
+        const results = await addTodo(content)
         if (!results || results.length < 1) {
             return c.html(<></>);
         }
