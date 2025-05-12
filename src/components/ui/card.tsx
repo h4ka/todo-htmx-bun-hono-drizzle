@@ -1,6 +1,6 @@
 import {JSX} from "hono/dist/types/jsx/base";
 import {css, cx} from "hono/css";
-import {HtmxProps} from "../../../types/props/htmx";
+import {HtmxProps} from "../../types/props/htmx";
 
 type HtmxCardProps = {
     children: JSX.Element | JSX.Element[];

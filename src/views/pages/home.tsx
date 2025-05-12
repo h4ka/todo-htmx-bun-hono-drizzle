@@ -1,6 +1,6 @@
 import {css} from 'hono/css'
 import Layout from '../layouts';
-import TodoCard from "../components/todo";
+import TodoCard from "../todos/todo-card";
 
 export default function Home() {
     return (

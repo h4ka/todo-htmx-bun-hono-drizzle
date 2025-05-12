@@ -1,5 +1,5 @@
 import {css, cx} from "hono/css";
-import {HtmxProps} from "../../../types/props/htmx";
+import {HtmxProps} from "../../types/props/htmx";
 
 type HtmxListProps = {
     htmxProps: HtmxProps,

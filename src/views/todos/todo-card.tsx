@@ -1,8 +1,8 @@
-import HtmxCard from "../ui/card";
-import HtmxList from "../ui/ul";
-import HtmxButton from "../ui/button";
-import HtmxForm from "../ui/form";
-import HtmxInput from "../ui/input";
+import HtmxCard from "../../components/ui/card";
+import HtmxList from "../../components/ui/ul";
+import HtmxButton from "../../components/ui/button";
+import HtmxForm from "../../components/ui/form";
+import HtmxInput from "../../components/ui/input";
 import {css} from "hono/css";
 
 export default function TodoCard() {

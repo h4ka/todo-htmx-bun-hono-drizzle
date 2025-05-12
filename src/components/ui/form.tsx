@@ -1,6 +1,6 @@
 import {css, cx} from "hono/css";
 import {JSX} from "hono/dist/types/jsx/base";
-import {HtmxProps} from "../../../types/props/htmx";
+import {HtmxProps} from "../../types/props/htmx";
 
 type HtmxFormProps = {
     children: JSX.Element | JSX.Element[];

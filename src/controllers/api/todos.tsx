@@ -1,6 +1,6 @@
 import {Hono} from "hono";
-import HtmxListItem from "../../views/components/ui/li";
 import {addTodo, deleteTodo, listTodos} from "../../models/todos";
+import HtmxListItem from "../../components/ui/li";
 
 const todoRoute = new Hono()
 
