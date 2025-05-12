@@ -1,6 +1,6 @@
 import {Hono} from "hono";
 import HtmxListItem from "../../views/components/ui/li";
-import {addTodo, listTodos} from "../../models/todos";
+import {addTodo, deleteTodo, listTodos} from "../../models/todos";
 
 const todoRoute = new Hono()
 
@@ -23,6 +23,13 @@ todoRoute
         }
 
         return c.html(<HtmxListItem>{results[0].content}</HtmxListItem>);
+    })
+    .delete("/", async c => {
+        const { todoId } = await c.req.json();
+        await deleteTodo(todoId)
+        return c.body('✔', 200, {
+            'HX-Trigger': 'todo-delete',
+        });
     })
 
 export default todoRoute
