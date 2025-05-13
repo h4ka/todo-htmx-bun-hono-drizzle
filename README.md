@@ -1,15 +1,10 @@
-## 🌐 HTMX - Bun, Hono, Drizzle ORM, Tailwind
+## 🌐 HTMX - Bun, Hono and Drizzle ORM
 A simple ToDo app meant to show some of the HTMX basics. 
-It is all running using Bun, with Hono for the routing, Drizzle as the ORM for the SQLite database and Tailwind for styling.
 
 ### Setup
 Install all dependencies
 ```
 bun install
-```
-Create a `.env` file
-```
-PORT=3049
 ```
 Create SQLite DB + Generate and apply migrations + insert seed data
 ```
