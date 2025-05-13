@@ -4,7 +4,7 @@ import {HtmxProps} from "../../types/props/htmx";
 
 type HtmxButtonProp = {
     children?: string | JSX.Element;
-    buttonStyle?: string;
+    style?: Promise<string>;
     htmxProps?: HtmxProps;
     type?: "button" | "submit" | "reset";
     name?: string,
@@ -14,7 +14,7 @@ type HtmxButtonProp = {
 export default function HtmxButton(
     {
         children,
-        buttonStyle,
+        style,
         htmxProps,
         type = "button",
         name = "default",
@@ -22,7 +22,7 @@ export default function HtmxButton(
     }: HtmxButtonProp) {
     return <button
         type={type}
-        className={cx(styles.button, buttonStyle)}
+        className={cx(styles.button, style)}
         name={name}
         value={value}
         {...htmxProps}
@@ -46,5 +46,6 @@ const styles = {
         background-color: gray;
         color: white;
         border: 1px solid black;
+        min-width: 100px;
     `
 }

@@ -5,13 +5,13 @@ import {HtmxProps} from "../../types/props/htmx";
 type HtmxCardProps = {
     children: JSX.Element | JSX.Element[];
     htmxProps?: HtmxProps;
-    cardStyle?: string;
+    style?: Promise<string>;
 }
 
-export default function HtmxCard({children, cardStyle, htmxProps}: HtmxCardProps) {
+export default function HtmxCard({children, style, htmxProps}: HtmxCardProps) {
     return <div
         {...htmxProps}
-        class={cx(styles.card, cardStyle)}>
+        class={cx(styles.card, style)}>
         {children}
     </div>
 }

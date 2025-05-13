@@ -15,6 +15,7 @@ export default function TodoCard() {
             "hx-post": "/api/todos",
             "hx-target": "#todo-list",
             "hx-swap": "beforeend",
+            "hx-on::after-request": "if(event.detail.successful) this.reset()"
         }
     }
 
@@ -35,7 +36,7 @@ export default function TodoCard() {
         <HtmxList
             id="todo-list"
             htmxProps={htmxProps.list}
-            listStyle={styles.list}
+            style={styles.list}
         />
     </HtmxCard>
 }

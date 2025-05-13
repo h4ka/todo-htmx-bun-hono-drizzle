@@ -4,7 +4,7 @@ import {HtmxProps} from "../../types/props/htmx";
 
 type HtmxFormProps = {
     children: JSX.Element | JSX.Element[];
-    formStyle?: string;
+    style?: Promise<string>;
     htmxProps?: HtmxProps;
     enctype?: "application/x-www-form-urlencoded" | "multipart/form-data" | "text/plain";
 }
@@ -12,7 +12,7 @@ type HtmxFormProps = {
 export default function HtmxForm(
     {
         children,
-        formStyle,
+        style,
         htmxProps,
         enctype = "application/x-www-form-urlencoded",
     }: HtmxFormProps) {
@@ -20,7 +20,7 @@ export default function HtmxForm(
         <form
             {...htmxProps}
             enctype={enctype}
-            class={cx(styles.todoForm, formStyle)}
+            class={cx(styles.todoForm, style)}
         >
             {children}
         </form>

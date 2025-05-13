@@ -3,7 +3,7 @@ import {css, cx} from "hono/css";
 type HtmxInputProps = {
     type: "text" | "password";
     required: boolean;
-    inputStyle?: string;
+    style?: Promise<string>;
     placeholder?: string;
     id: string;
     name: string;
@@ -13,7 +13,7 @@ export default function HtmxInput(
     {
         type,
         required,
-        inputStyle,
+        style,
         placeholder = "add custom placeholder",
         id,
         name,
@@ -22,7 +22,7 @@ export default function HtmxInput(
         id={id}
         name={name}
         type={type}
-        className={cx(styles.input, inputStyle)}
+        className={cx(styles.input, style)}
         placeholder={placeholder}
         required={required}
     />

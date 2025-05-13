@@ -4,17 +4,17 @@ import {HtmxProps} from "../../types/props/htmx";
 type HtmxListProps = {
     htmxProps: HtmxProps,
     containerStyle?: string,
-    listStyle?: Promise<string>,
+    style?: Promise<string>,
     id: string,
 }
 
-export default function HtmxList({htmxProps, containerStyle, listStyle, id}: HtmxListProps) {
+export default function HtmxList({htmxProps, containerStyle, style, id}: HtmxListProps) {
     return <div class={cx(styles.container, containerStyle)}>
         <ul
             {...htmxProps}
             id={id}
             role="list"
-            class={cx(styles.list, listStyle)}
+            class={cx(styles.list, style)}
         >
         </ul>
     </div>
