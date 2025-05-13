@@ -1,35 +1,36 @@
-import {css, cx} from "hono/css";
+import { css, cx } from "hono/css";
 
 type HtmxInputProps = {
-    type: "text" | "password";
-    required: boolean;
-    style?: Promise<string>;
-    placeholder?: string;
-    id: string;
-    name: string;
-}
+	type: "text" | "password";
+	required: boolean;
+	style?: Promise<string>;
+	placeholder?: string;
+	id: string;
+	name: string;
+};
 
-export default function HtmxInput(
-    {
-        type,
-        required,
-        style,
-        placeholder = "add custom placeholder",
-        id,
-        name,
-    }: HtmxInputProps) {
-    return <input
-        id={id}
-        name={name}
-        type={type}
-        className={cx(styles.input, style)}
-        placeholder={placeholder}
-        required={required}
-    />
+export default function HtmxInput({
+	type,
+	required,
+	style,
+	placeholder = "add custom placeholder",
+	id,
+	name,
+}: HtmxInputProps) {
+	return (
+		<input
+			id={id}
+			name={name}
+			type={type}
+			className={cx(styles.input, style)}
+			placeholder={placeholder}
+			required={required}
+		/>
+	);
 }
 
 const styles = {
-    input: css`
+	input: css`
         flex: 1;
         padding: 0.5rem 0.75rem;
         background-color: transparent;
@@ -39,4 +40,4 @@ const styles = {
         color: inherit;
         transition: border-color 0.15s ease;
     `,
-}
+};

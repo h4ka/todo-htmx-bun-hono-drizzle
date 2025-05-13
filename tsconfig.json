@@ -1,9 +1,9 @@
 {
-  "compilerOptions": {
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx"
-  }
+	"compilerOptions": {
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "hono/jsx"
+	}
 }
