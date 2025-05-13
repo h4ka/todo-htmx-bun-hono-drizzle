@@ -10,11 +10,11 @@
     "update:latest": "bun update --latest"
   },
   "dependencies": {
-    "hono": "^4.7.8",
+    "hono": "^4.7.9",
     "drizzle-orm": "^0.43.1"
   },
   "devDependencies": {
-    "@types/bun": "^1.2.12",
+    "@types/bun": "^1.2.13",
     "drizzle-kit": "^0.31.1"
   }
 }
