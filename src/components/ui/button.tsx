@@ -1,9 +1,8 @@
 import { css, cx } from "hono/css";
-import type { JSX } from "hono/dist/types/jsx/base";
+import type { PropsWithChildren } from "hono/jsx";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxButtonProp = {
-	children?: string | JSX.Element;
 	style?: Promise<string>;
 	htmxProps?: HtmxProps;
 	type?: "button" | "submit" | "reset";
@@ -18,7 +17,7 @@ export default function HtmxButton({
 	type = "button",
 	name = "default",
 	value = "default",
-}: HtmxButtonProp) {
+}: PropsWithChildren<HtmxButtonProp>) {
 	return (
 		<button
 			type={type}
