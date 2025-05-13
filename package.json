@@ -16,6 +16,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
 		"@types/bun": "^1.2.13",
-		"drizzle-kit": "^0.31.1"
+		"drizzle-kit": "^0.31.1",
+		"lefthook": "^1.11.12"
 	}
 }
