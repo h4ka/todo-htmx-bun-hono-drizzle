@@ -1,9 +1,7 @@
 import { Style, css } from "hono/css";
-import type { JSX } from "hono/dist/types/jsx/base";
+import type { PropsWithChildren } from "hono/jsx";
 
-export default function Layout({
-	children,
-}: { children: JSX.Element | JSX.Element[] }) {
+export default function Layout({ children }: PropsWithChildren) {
 	return (
 		<html lang="en">
 			<head>

@@ -1,9 +1,8 @@
 import { css, cx } from "hono/css";
-import type { JSX } from "hono/dist/types/jsx/base";
+import type { PropsWithChildren } from "hono/jsx";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxCardProps = {
-	children: JSX.Element | JSX.Element[];
 	htmxProps?: HtmxProps;
 	style?: Promise<string>;
 };
@@ -12,7 +11,7 @@ export default function HtmxCard({
 	children,
 	style,
 	htmxProps,
-}: HtmxCardProps) {
+}: PropsWithChildren<HtmxCardProps>) {
 	return (
 		<div {...htmxProps} class={cx(styles.card, style)}>
 			{children}

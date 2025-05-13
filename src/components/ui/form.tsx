@@ -1,9 +1,8 @@
 import { css, cx } from "hono/css";
-import type { JSX } from "hono/dist/types/jsx/base";
+import type { PropsWithChildren } from "hono/jsx";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxFormProps = {
-	children: JSX.Element | JSX.Element[];
 	style?: Promise<string>;
 	htmxProps?: HtmxProps;
 	enctype?:
@@ -17,7 +16,7 @@ export default function HtmxForm({
 	style,
 	htmxProps,
 	enctype = "application/x-www-form-urlencoded",
-}: HtmxFormProps) {
+}: PropsWithChildren<HtmxFormProps>) {
 	return (
 		<form {...htmxProps} enctype={enctype} class={cx(styles.todoForm, style)}>
 			{children}

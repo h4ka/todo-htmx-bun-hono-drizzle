@@ -1,21 +1,18 @@
 import { css, cx } from "hono/css";
-import type { JSX } from "hono/dist/types/jsx/base";
+import type { PropsWithChildren } from "hono/jsx";
 
 type HtmxListItemProps = {
-	children: JSX.Element | JSX.Element[] | string;
-	key: number | string;
 	id: string;
 	style?: Promise<string>;
 };
 
 export default function HtmxListItem({
 	children,
-	key,
 	id,
 	style,
-}: HtmxListItemProps) {
+}: PropsWithChildren<HtmxListItemProps>) {
 	return (
-		<li key={key} id={id} class={cx(styles.li, style)}>
+		<li id={id} class={cx(styles.li, style)}>
 			{children}
 		</li>
 	);
