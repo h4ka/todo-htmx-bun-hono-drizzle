@@ -1,7 +1,13 @@
 import {JSX} from "hono/dist/types/jsx/base";
 
-export default function HtmxListItem({children}: { children: JSX.Element | JSX.Element[] | string }) {
-    return <li>
+type HtmxListItemProps = {
+    children: JSX.Element | JSX.Element[] | string;
+    key: number | string;
+    id: string;
+}
+
+export default function HtmxListItem({children, key, id}: HtmxListItemProps) {
+    return <li key={key} id={id}>
         {children}
     </li>
 }

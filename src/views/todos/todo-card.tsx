@@ -6,6 +6,18 @@ import HtmxInput from "../../components/ui/input";
 import {css} from "hono/css";
 
 export default function TodoCard() {
+    const htmxProps = {
+        list: {
+            "hx-get": "/api/todos",
+            "hx-trigger": "load, todo-delete from:body",
+        },
+        form: {
+            "hx-post": "/api/todos",
+            "hx-target": "#todo-list",
+            "hx-swap": "beforeend",
+        }
+    }
+
     return <HtmxCard>
         <HtmxForm
             htmxProps={htmxProps.form}
@@ -26,18 +38,6 @@ export default function TodoCard() {
             listStyle={styles.list}
         />
     </HtmxCard>
-}
-
-const htmxProps = {
-    list: {
-        "hx-get": "/api/todos",
-        "hx-trigger": "load, todo-delete from:body",
-    },
-    form: {
-        "hx-post": "/api/todos",
-        "hx-target": "#todo-list",
-        "hx-swap": "beforeend",
-    }
 }
 
 const styles = {

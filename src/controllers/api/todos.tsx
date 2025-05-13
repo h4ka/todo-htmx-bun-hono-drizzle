@@ -1,6 +1,7 @@
 import {Hono} from "hono";
 import {addTodo, deleteTodo, listTodos} from "../../models/todos";
-import HtmxListItem from "../../components/ui/li";
+import TodoItem from "../../views/todos/todo-item";
+import {invariant} from "../../utils/invariant";
 
 const todoRoute = new Hono()
 
@@ -9,7 +10,7 @@ todoRoute
         const results = await listTodos()
         return c.html(
             <>
-                {results.map(todo => <HtmxListItem>{todo.content}</HtmxListItem>)}
+                {results.map(todo => <TodoItem todo={todo}/>)}
             </>,
         );
     })
@@ -22,11 +23,17 @@ todoRoute
             return c.html(<></>);
         }
 
-        return c.html(<HtmxListItem>{results[0].content}</HtmxListItem>);
+        return c.html(<TodoItem todo={results[0]}></TodoItem>);
     })
     .delete("/", async c => {
-        const { todoId } = await c.req.json();
-        await deleteTodo(todoId)
+        const todoId = c.req.query("todoId");
+        invariant(!!todoId, "todoId must be part of query")
+
+        const id = parseInt(todoId)
+        invariant(!isNaN(id))
+
+        await deleteTodo(id)
+
         return c.body('✔', 200, {
             'HX-Trigger': 'todo-delete',
         });
