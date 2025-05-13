@@ -1,5 +1,5 @@
 import {css, cx} from "hono/css";
-import {HtmxProps} from "../../types/props/htmx";
+import type {HtmxProps} from "../../types/props/htmx";
 
 type HtmxListProps = {
     htmxProps: HtmxProps,
@@ -13,7 +13,6 @@ export default function HtmxList({htmxProps, containerStyle, style, id}: HtmxLis
         <ul
             {...htmxProps}
             id={id}
-            role="list"
             class={cx(styles.list, style)}
         >
         </ul>

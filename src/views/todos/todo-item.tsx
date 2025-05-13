@@ -1,4 +1,4 @@
-import {Todo} from "../../db/schema/todos";
+import type {Todo} from "../../db/schema/todos";
 import HtmxListItem from "../../components/ui/li";
 import HtmxButton from "../../components/ui/button";
 import {css} from "hono/css";

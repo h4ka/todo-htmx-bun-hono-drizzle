@@ -1,4 +1,4 @@
-import {JSX} from "hono/dist/types/jsx/base";
+import type {JSX} from "hono/dist/types/jsx/base";
 import {css, Style} from "hono/css";
 
 export default function Layout({children}: { children: JSX.Element | JSX.Element[] }) {
@@ -6,7 +6,7 @@ export default function Layout({children}: { children: JSX.Element | JSX.Element
         <html lang="en">
         <head>
             <title>Demo Bun + Hono App</title>
-            <script src="/public/scripts/htmx.min.js"></script>
+            <script src="/public/scripts/htmx.min.js"/>
             <meta charset="utf-8"/>
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
             <link rel="stylesheet" href="/src/styles.css"/>

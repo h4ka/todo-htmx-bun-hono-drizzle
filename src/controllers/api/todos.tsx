@@ -1,7 +1,7 @@
 import {Hono} from "hono";
 import {addTodo, deleteTodo, listTodos} from "../../models/todos";
-import TodoItem from "../../views/todos/todo-item";
 import {invariant} from "../../utils/invariant";
+import TodoItem from "../../views/todos/todo-item";
 
 const todoRoute = new Hono()
 
@@ -11,7 +11,7 @@ todoRoute
 
         return c.html(
             <>
-                {results.map(todo => <TodoItem todo={todo}/>)}
+                {results.map(todo => <TodoItem key={todo.id} todo={todo}/>)}
             </>,
         );
     })
@@ -19,21 +19,18 @@ todoRoute
         const data = await c.req.formData();
         const content = data.get("content");
         invariant(!!content, "Todo content must be present")
+        invariant(typeof content === "string", "Todo content must be a string")
 
         const results = await addTodo(content);
 
-        if (!results || results.length < 1) {
-            return c.html(<></>);
-        }
-
-        return c.html(<TodoItem todo={results[0]}></TodoItem>);
+        return c.html(<TodoItem todo={results[0]} />);
     })
     .delete("/", async c => {
         const todoId = c.req.query("todoId");
         invariant(!!todoId, "todoId must be part of query")
 
-        const id = parseInt(todoId)
-        invariant(!isNaN(id))
+        const id = Number.parseInt(todoId)
+        invariant(!Number.isNaN(id), "Todo id must be a number")
 
         await deleteTodo(id)
 

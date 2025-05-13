@@ -2,7 +2,7 @@ import * as schema from './schema/todos';
 import {db} from './index';
 
 (async () => {
-    console.log(`Starting seeding.`);
+    console.log("Starting seeding.");
     await db.insert(schema.todos).values([
         {
             content: 'Subscribe to CodeBrew',
@@ -15,5 +15,5 @@ import {db} from './index';
         },
     ]);
 
-    console.log(`Seeding complete.`);
+    console.log("Seeding complete.");
 })();

@@ -1,4 +1,4 @@
-import {JSX} from "hono/dist/types/jsx/base";
+import type {JSX} from "hono/dist/types/jsx/base";
 import {css, cx} from "hono/css";
 
 type HtmxListItemProps = {
