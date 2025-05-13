@@ -8,6 +8,7 @@ const todoRoute = new Hono()
 todoRoute
     .get("/", async c => {
         const results = await listTodos()
+
         return c.html(
             <>
                 {results.map(todo => <TodoItem todo={todo}/>)}
@@ -17,6 +18,8 @@ todoRoute
     .post("/", async c => {
         const data = await c.req.formData();
         const content = data.get("content");
+        invariant(!!content, "Todo content must be present")
+
         const results = await addTodo(content);
 
         if (!results || results.length < 1) {
