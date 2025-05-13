@@ -1,6 +1,6 @@
+import { eq } from "drizzle-orm";
 import { db } from "../../db";
 import { type Todo, todos } from "../../db/schema/todos";
-import { eq } from "drizzle-orm";
 
 export function listTodos(): Promise<Todo[]> {
 	return db.select().from(todos);

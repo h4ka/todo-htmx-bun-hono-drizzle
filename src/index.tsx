@@ -1,7 +1,7 @@
 import { Hono } from "hono";
-import Home from "./views/pages/home";
 import { serveStatic } from "hono/bun";
 import todoRoute from "./controllers/api/todos";
+import Home from "./views/pages/home";
 
 const app = new Hono();
 

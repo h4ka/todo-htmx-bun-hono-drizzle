@@ -1,5 +1,5 @@
-import type { JSX } from "hono/dist/types/jsx/base";
 import { css, cx } from "hono/css";
+import type { JSX } from "hono/dist/types/jsx/base";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxButtonProp = {

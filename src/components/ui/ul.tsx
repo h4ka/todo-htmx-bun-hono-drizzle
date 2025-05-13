@@ -16,7 +16,7 @@ export default function HtmxList({
 }: HtmxListProps) {
 	return (
 		<div class={cx(styles.container, containerStyle)}>
-			<ul {...htmxProps} id={id} class={cx(styles.list, style)}></ul>
+			<ul {...htmxProps} id={id} class={cx(styles.list, style)} />
 		</div>
 	);
 }

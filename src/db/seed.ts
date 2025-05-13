@@ -1,5 +1,5 @@
-import * as schema from "./schema/todos";
 import { db } from "./index";
+import * as schema from "./schema/todos";
 
 (async () => {
 	console.log("Starting seeding.");

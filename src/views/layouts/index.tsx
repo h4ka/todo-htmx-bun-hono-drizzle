@@ -1,5 +1,5 @@
+import { Style, css } from "hono/css";
 import type { JSX } from "hono/dist/types/jsx/base";
-import { css, Style } from "hono/css";
 
 export default function Layout({
 	children,

@@ -1,7 +1,7 @@
-import type { Todo } from "../../db/schema/todos";
-import HtmxListItem from "../../components/ui/li";
-import HtmxButton from "../../components/ui/button";
 import { css } from "hono/css";
+import HtmxButton from "../../components/ui/button";
+import HtmxListItem from "../../components/ui/li";
+import type { Todo } from "../../db/schema/todos";
 
 type TodoItemProps = {
 	todo: Todo;
