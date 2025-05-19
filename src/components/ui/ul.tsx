@@ -1,4 +1,5 @@
 import { css, cx } from "hono/css";
+import type { PropsWithChildren } from "hono/jsx";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxListProps = {
@@ -7,8 +8,17 @@ type HtmxListProps = {
 	id: string;
 };
 
-export default function HtmxList({ htmxProps, style, id }: HtmxListProps) {
-	return <ul {...htmxProps} id={id} class={cx(styles.list, style)} />;
+export default function HtmxList({
+	htmxProps,
+	style,
+	id,
+	children,
+}: HtmxListProps & PropsWithChildren) {
+	return (
+		<ul {...htmxProps} id={id} class={cx(styles.list, style)}>
+			{children}
+		</ul>
+	);
 }
 
 const styles = {
