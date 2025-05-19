@@ -5,10 +5,7 @@ import Home from "./views/pages/home";
 
 const app = new Hono();
 
-app.use(
-	"/public/scripts/htmx.min.js",
-	serveStatic({ path: "./public/scripts/htmx.min.js" }),
-);
+app.use("/public/*", serveStatic({ root: "./" }));
 app.use("/src/styles.css", serveStatic({ path: "./src/styles.css" }));
 
 app.get("/", (c) => {
