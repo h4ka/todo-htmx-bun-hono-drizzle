@@ -7,7 +7,10 @@
 		"db:generate": "bunx drizzle-kit generate --dialect=sqlite --schema=src/db/schema --name=${npm_config_name}",
 		"db:migrate": "bun run src/db/migrate.ts",
 		"update:check": "bun outdated",
-		"update:latest": "bun update --latest"
+		"update:latest": "bun update --latest",
+		"check": "biome check",
+		"format": "biome format --fix",
+		"lint": "biome lint --fix"
 	},
 	"dependencies": {
 		"drizzle-orm": "^0.43.1",
