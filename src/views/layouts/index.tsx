@@ -20,11 +20,14 @@ export default function Layout({ children }: PropsWithChildren) {
 
 const styles = {
 	body: css`
-        margin: 0;
-        padding: 1rem;
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    `,
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+		overscroll-behavior: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0;
+		margin: 0;
+	`,
 };

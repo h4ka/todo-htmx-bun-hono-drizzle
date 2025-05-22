@@ -13,18 +13,14 @@ export default function HtmxCard({
 	htmxProps,
 }: PropsWithChildren<HtmxCardProps>) {
 	return (
-		<div {...htmxProps} class={cx(styles.card, style)}>
+		<section {...htmxProps} class={cx(styles.card, style)}>
 			{children}
-		</div>
+		</section>
 	);
 }
 
 const styles = {
 	card: css`
-        background-color: #e8e6e6;
-        border-radius: 5px;
-        border: 1px solid gray;
-        padding: 1.5rem;
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+		margin: 1rem;
     `,
 };
