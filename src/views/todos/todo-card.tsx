@@ -3,7 +3,7 @@ import HtmxCard from "../../components/ui/card";
 import TodoForm from "./todo-form";
 import TodoHeader from "./todo-header";
 import TodoListContainer from "./todo-list-container";
-import TodoStats from "./todo-stats";
+import TodoStatsContainer from "./todo-stats-container";
 
 export default function TodoCard() {
 	return (
@@ -11,7 +11,7 @@ export default function TodoCard() {
 			<TodoHeader />
 			<TodoForm />
 			<TodoListContainer />
-			<TodoStats />
+			<TodoStatsContainer />
 		</HtmxCard>
 	);
 }

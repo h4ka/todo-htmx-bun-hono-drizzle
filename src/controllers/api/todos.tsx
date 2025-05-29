@@ -1,8 +1,14 @@
 import { Hono } from "hono";
-import { addTodo, deleteTodo, listTodos } from "../../models/todos";
+import {
+	addTodo,
+	deleteTodo,
+	getTodoStats,
+	listTodos,
+} from "../../models/todos";
 import { invariant } from "../../utils/invariant";
 import TodoItem from "../../views/todos/todo-item";
 import TodoListResponse from "../../views/todos/todo-list-response";
+import TodoStatsResponse from "../../views/todos/todo-stats-response";
 
 const todoRoute = new Hono();
 
@@ -35,5 +41,10 @@ todoRoute
 			"HX-Trigger": "todo-delete",
 		});
 	});
+
+todoRoute.get("/stats", async (c) => {
+	const results = await getTodoStats();
+	return c.html(<TodoStatsResponse stats={results[0]} />);
+});
 
 export default todoRoute;

@@ -9,3 +9,8 @@ export const todos = sqliteTable("todos", {
 });
 
 export type Todo = InferSelectModel<typeof todos>;
+
+export type TodoStats = {
+	totalTodos: number;
+	activeTodos: number;
+};

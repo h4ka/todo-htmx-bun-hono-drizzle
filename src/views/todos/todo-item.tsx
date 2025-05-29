@@ -17,6 +17,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
 
 	return (
 		<HtmxListItem key={todo.id} id={`todo-${todo.id}`} style={styles.li}>
+			<span>{todo.done ? "☑️" : "⬜️"}</span>
 			<span>{todo.content}</span>
 			<HtmxButton
 				name="todoId"
