@@ -2,22 +2,17 @@ import { Hono } from "hono";
 import { addTodo, deleteTodo, listTodos } from "../../models/todos";
 import { invariant } from "../../utils/invariant";
 import TodoItem from "../../views/todos/todo-item";
+import TodoListResponse from "../../views/todos/todo-list-response";
 
 const todoRoute = new Hono();
 
 todoRoute
-	.get("/", async (c) => {
+	.get(async (c) => {
 		const results = await listTodos();
 
-		return c.html(
-			<>
-				{results.map((todo) => (
-					<TodoItem key={todo.id} todo={todo} />
-				))}
-			</>,
-		);
+		return c.html(<TodoListResponse todos={results} />);
 	})
-	.post("/", async (c) => {
+	.post(async (c) => {
 		const data = await c.req.formData();
 		const content = data.get("content");
 		invariant(!!content, "Todo content must be present");
@@ -27,7 +22,7 @@ todoRoute
 
 		return c.html(<TodoItem todo={results[0]} />);
 	})
-	.delete("/", async (c) => {
+	.delete(async (c) => {
 		const todoId = c.req.query("todoId");
 		invariant(!!todoId, "todoId must be part of query");
 

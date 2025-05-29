@@ -3,9 +3,9 @@ import type { PropsWithChildren } from "hono/jsx";
 import type { HtmxProps } from "../../types/props/htmx";
 
 type HtmxListProps = {
-	htmxProps: HtmxProps;
+	htmxProps?: HtmxProps;
 	style?: Promise<string>;
-	id: string;
+	id?: string;
 };
 
 export default function HtmxList({

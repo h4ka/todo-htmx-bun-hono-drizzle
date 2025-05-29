@@ -8,13 +8,11 @@ type TodoItemProps = {
 };
 
 export default function TodoItem({ todo }: TodoItemProps) {
-	const htmxProps = {
-		button: {
-			"hx-delete": "/api/todos",
-			"hx-target": `#todo-${todo.id}`,
-			"hx-swap": "delete",
-			"hx-trigger": "click",
-		},
+	const htmxAttributes = {
+		"hx-delete": "/api/todos",
+		"hx-target": `#todo-${todo.id}`,
+		"hx-swap": "delete",
+		"hx-trigger": "click",
 	};
 
 	return (
@@ -23,7 +21,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
 			<HtmxButton
 				name="todoId"
 				value={todo.id}
-				htmxProps={htmxProps.button}
+				htmxProps={htmxAttributes}
 				style={styles.button}
 			>
 				Delete
