@@ -5,8 +5,17 @@ import Home from "./views/pages/home";
 
 const app = new Hono();
 
-app.use("/public/*", serveStatic({ root: "./" }));
-app.use("/src/styles.css", serveStatic({ path: "./src/styles.css" }));
+app.get(
+	"/static/*",
+	serveStatic({
+		onFound: (_path, c) => {
+			c.header("Cache-Control", "public, immutable, max-age=31536000");
+		},
+		onNotFound: (path, c) => {
+			console.log(`${path} is not found, you access ${c.req.path}`);
+		},
+	}),
+);
 
 app.get("/", (c) => {
 	return c.html(<Home />);

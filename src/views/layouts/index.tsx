@@ -5,12 +5,12 @@ export default function Layout({ children }: PropsWithChildren) {
 	return (
 		<html lang="en">
 			<head>
-				<title>Demo Bun + Hono App</title>
-				<script src="/public/scripts/htmx.min.js" />
+				<title>Demo Bun + Hono + HTMX App</title>
 				<meta charset="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<link rel="icon" type="image/png" href="/public/favicon.png" />
-				<link rel="stylesheet" href="/src/styles.css" />
+				<link rel="icon" type="image/png" href="/static/favicon.png" />
+				<link rel="stylesheet" href="/static/styles/styles.css" />
+				<script src="/static/scripts/htmx.min.js" />
 				<Style />
 			</head>
 			<body class={styles.body}>{children}</body>
@@ -23,6 +23,7 @@ const styles = {
 		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 		overscroll-behavior: none;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
