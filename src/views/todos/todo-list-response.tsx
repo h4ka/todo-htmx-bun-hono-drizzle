@@ -1,4 +1,4 @@
-import HtmxList from "../../components/ui/ul";
+import { css } from "hono/css";
 import type { Todo } from "../../db/schema/todos";
 import TodoItem from "./todo-item";
 
@@ -8,10 +8,20 @@ type TodoListResponseProps = {
 
 export default function TodoListResponse({ todos }: TodoListResponseProps) {
 	return (
-		<HtmxList id="todo-list">
+		<ul id="todo-list" class={styles.list}>
 			{todos.map((todo) => (
 				<TodoItem key={todo.id} todo={todo} />
 			))}
-		</HtmxList>
+		</ul>
 	);
 }
+
+const styles = {
+	list: css`
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0;
+    `,
+};

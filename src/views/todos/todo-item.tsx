@@ -1,6 +1,4 @@
 import { css, cx } from "hono/css";
-import HtmxButton from "../../components/ui/button";
-import HtmxListItem from "../../components/ui/li";
 import type { Todo } from "../../db/schema/todos";
 
 type TodoItemProps = {
@@ -16,10 +14,10 @@ export default function TodoItem({ todo }: TodoItemProps) {
 	};
 
 	return (
-		<HtmxListItem
+		<li
 			key={todo.id}
 			id={`todo-${todo.id}`}
-			style={cx(styles.li, todo.done && styles.completed)}
+			class={cx(styles.li, todo.done && styles.completed)}
 		>
 			<label class={styles.content}>
 				<input
@@ -33,15 +31,16 @@ export default function TodoItem({ todo }: TodoItemProps) {
 				</span>
 			</label>
 
-			<HtmxButton
+			<button
+				type="button"
+				className={styles.button}
 				name="todoId"
 				value={todo.id}
-				htmxProps={htmxAttributes}
-				style={styles.button}
+				{...htmxAttributes}
 			>
 				Delete
-			</HtmxButton>
-		</HtmxListItem>
+			</button>
+		</li>
 	);
 }
 
@@ -65,9 +64,9 @@ const styles = {
         }
     `,
 	completed: css`
-		opacity: 0.6;
-		background: #f7fafc;
-	`,
+        opacity: 0.6;
+        background: #f7fafc;
+    `,
 	checkbox: css`
         appearance: none;
         width: 20px;
@@ -100,21 +99,21 @@ const styles = {
         }
     `,
 	content: css`
-		display: flex;
-		align-items: center;
-		flex: 1;
-	`,
+        display: flex;
+        align-items: center;
+        flex: 1;
+    `,
 	text: css`
-		color: #2d3748;
-		font-size: 1rem;
-		line-height: 1.5;
-		flex: 1;
-		transition: all 0.3s ease;
-	`,
+        color: #2d3748;
+        font-size: 1rem;
+        line-height: 1.5;
+        flex: 1;
+        transition: all 0.3s ease;
+    `,
 	completedText: css`
-		text-decoration: line-through;
-		color: #6b7280;
-	`,
+        text-decoration: line-through;
+        color: #6b7280;
+    `,
 	button: css`
         background: none;
         border: none;
@@ -126,10 +125,10 @@ const styles = {
         transform: scale(0.8);
         font-size: 1.2rem;
         font-weight: bold;
-		opacity: 0.6;
+        opacity: 0.6;
 
         &:hover {
-			opacity: 1;
+            opacity: 1;
             background: #fed7d7;
             transform: scale(1.1);
         }
