@@ -17,7 +17,7 @@ export default function TodoCard() {
 
 const styles = {
 	main: css`
-		padding: 1rem;
+		padding: 1rem 2rem;
 		display: flex;
 		flex-direction: column;
 		background: rgba(255, 255, 255, 0.95);

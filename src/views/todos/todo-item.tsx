@@ -17,7 +17,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
 		<li
 			key={todo.id}
 			id={`todo-${todo.id}`}
-			class={cx(styles.li, todo.done && styles.completed)}
+			class={cx(styles.list, todo.done && styles.completed)}
 		>
 			<label class={styles.content}>
 				<input
@@ -38,14 +38,14 @@ export default function TodoItem({ todo }: TodoItemProps) {
 				value={todo.id}
 				{...htmxButtonAttributes}
 			>
-				Delete
+				❌
 			</button>
 		</li>
 	);
 }
 
 const styles = {
-	li: css`
+	list: css`
         background: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 12px;
@@ -56,10 +56,18 @@ const styles = {
         transition: all 0.3s ease;
         animation: slideIn 0.5s ease;
         cursor: pointer;
+		
+		button[name="todoId"] {
+			opacity: 0;
+		}
 
         &:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+
+			button[name="todoId"] {
+				opacity: 0.6;
+			}
         }
     `,
 	completed: css`
@@ -127,9 +135,9 @@ const styles = {
         border-radius: 6px;
         transition: all 0.3s ease;
         transform: scale(0.8);
-        font-size: 1.2rem;
+        font-size: 0.6rem;
         font-weight: bold;
-        opacity: 0.6;
+		min-width: 30px;
 
         &:hover {
             opacity: 1;
