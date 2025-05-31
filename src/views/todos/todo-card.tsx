@@ -6,20 +6,28 @@ import TodoStatsContainer from "./todo-stats-container";
 
 export default function TodoCard() {
 	return (
-		<section class={styles.card}>
+		<main class={styles.main}>
 			<TodoHeader />
 			<TodoForm />
 			<TodoListContainer />
 			<TodoStatsContainer />
-		</section>
+		</main>
 	);
 }
 
 const styles = {
-	card: css`
-		height: 100%;
+	main: css`
+		padding: 1rem;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
-	`,
+		background: rgba(255, 255, 255, 0.95);
+		backdrop-filter: blur(10px);
+		border-radius: 20px;
+		max-width: 500px;
+		width: 100%;
+		height: 80%;
+		overflow: hidden;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+		border: 1px solid rgba(255, 255, 255, 0.2);
+    `,
 };

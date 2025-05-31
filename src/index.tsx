@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import todoRoute from "./controllers/api/todos";
-import Home from "./views/pages/home";
+import HomePage from "./views/pages/home";
 
 const app = new Hono();
 
@@ -18,7 +18,7 @@ app.get(
 );
 
 app.get("/", (c) => {
-	return c.html(<Home />);
+	return c.html(<HomePage />);
 });
 
 app.notFound((c) => {
