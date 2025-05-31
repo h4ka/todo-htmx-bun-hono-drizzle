@@ -20,5 +20,9 @@ const styles = {
             font-weight: 300;
             letter-spacing: -1px;
         }
+		
+		p {
+			color: #718096;
+		}
     `,
 };
