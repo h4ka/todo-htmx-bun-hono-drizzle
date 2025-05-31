@@ -6,7 +6,7 @@ type TodoItemProps = {
 };
 
 export default function TodoItem({ todo }: TodoItemProps) {
-	const htmxAttributes = {
+	const htmxButtonAttributes = {
 		"hx-delete": "/api/todos",
 		"hx-target": `#todo-${todo.id}`,
 		"hx-swap": "delete",
@@ -36,7 +36,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
 				className={styles.button}
 				name="todoId"
 				value={todo.id}
-				{...htmxAttributes}
+				{...htmxButtonAttributes}
 			>
 				Delete
 			</button>
