@@ -5,13 +5,32 @@ import * as schema from "./schema/todos";
 	console.log("Starting seeding.");
 	await db.insert(schema.todos).values([
 		{
-			content: "Subscribe to CodeBrew",
+			content: "Learn HTML",
+			done: true,
 		},
 		{
-			content: "Like the video",
+			content: "Learn CSS",
 		},
 		{
-			content: "Check out the other videos",
+			content: "Learn Javascript",
+			done: true,
+		},
+		{
+			content: "Learn React",
+			done: true,
+		},
+		{
+			content: "Learn HTMX",
+		},
+		{
+			content: "Learn Bun and Hono",
+		},
+		{
+			content: "Create Todo App",
+			done: true,
+		},
+		{
+			content: "Deploy Todo App",
 		},
 	]);
 
