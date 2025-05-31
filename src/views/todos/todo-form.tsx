@@ -23,7 +23,7 @@ export default function TodoForm() {
 				required
 			/>
 			<button type="submit" className={styles.button}>
-				+
+				Add
 			</button>
 		</form>
 	);
@@ -31,11 +31,14 @@ export default function TodoForm() {
 
 const styles = {
 	todoForm: css`
-        display: flex;
-        gap: 0.5rem;
-        width: 100%;
-        padding-bottom: 1rem;
-    `,
+		display: flex;
+		gap: 0.5rem;
+		width: 100%;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #e2e8f0;
+		margin-bottom: 1rem;
+		box-shadow: 0 1rem 1rem -1rem #d6d6d6;
+	`,
 	input: css`
 		width: 100%;
 		padding: 1rem 1.5rem;
@@ -63,7 +66,7 @@ const styles = {
 		border: none;
 		background: #667eea;
 		color: white;
-		font-size: 1.5rem;
+		font-size: 1rem;
         font-weight: 400;
         transition: all 0.15s ease;
         cursor: pointer;
@@ -74,6 +77,7 @@ const styles = {
 			opacity: 1;
 			background: #5a67d8;
 			transform: scale(1.05);
+			font-size: 1.2rem;
 		}
     `,
 };
