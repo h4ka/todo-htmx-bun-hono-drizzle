@@ -2,7 +2,10 @@ import { count, eq, sql } from "drizzle-orm";
 import { db } from "../../db";
 import { type Todo, type TodoStats, todos } from "../../db/schema/todos";
 
-export function listTodos(): Promise<Todo[]> {
+export async function listTodos(): Promise<Todo[]> {
+	// Simulate a server delay
+	await new Promise((resolve) => setTimeout(resolve, 1000));
+
 	return db.select().from(todos);
 }
 

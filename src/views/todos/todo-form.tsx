@@ -4,7 +4,7 @@ export default function TodoForm() {
 	const htmxFormAttributes = {
 		"hx-post": "/api/todos",
 		"hx-target": "#todo-list",
-		"hx-swap": "beforeend",
+		"hx-swap": "afterbegin",
 		"hx-on::after-request": "if(event.detail.successful) this.reset()",
 	};
 
