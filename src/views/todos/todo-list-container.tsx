@@ -11,5 +11,6 @@ export default function TodoListContainer() {
 
 const styles = {
 	listContainer: css`
+		overflow: auto;
 	`,
 };

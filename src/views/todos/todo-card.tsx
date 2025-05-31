@@ -17,9 +17,10 @@ export default function TodoCard() {
 
 const styles = {
 	card: css`
-		height: auto;
+		height: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		padding: 1rem;
 	`,
 };

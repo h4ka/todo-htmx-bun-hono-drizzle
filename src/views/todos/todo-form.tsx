@@ -34,6 +34,7 @@ const styles = {
         display: flex;
         gap: 0.5rem;
         width: 100%;
+        padding-bottom: 1rem;
     `,
 	input: css`
         flex: 1;

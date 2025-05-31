@@ -49,8 +49,7 @@ const styles = {
         background: #ffffff;
         border: 1px solid #e2e8f0;
         border-radius: 12px;
-        padding: 18px;
-        margin-bottom: 12px;
+        padding: 1rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -73,7 +72,8 @@ const styles = {
         height: 20px;
         border: 2px solid #cbd5e0;
         border-radius: 6px;
-        margin-right: 15px;
+        margin-right: 1rem;
+        margin-left: 0.5rem;
         cursor: pointer;
         position: relative;
         transition: all 0.3s ease;
@@ -102,6 +102,7 @@ const styles = {
         display: flex;
         align-items: center;
         flex: 1;
+        overflow: hidden;
     `,
 	text: css`
         color: #2d3748;
@@ -109,6 +110,8 @@ const styles = {
         line-height: 1.5;
         flex: 1;
         transition: all 0.3s ease;
+        overflow: hidden;
+        text-overflow: ellipsis;
     `,
 	completedText: css`
         text-decoration: line-through;
@@ -119,7 +122,8 @@ const styles = {
         border: none;
         color: #e53e3e;
         cursor: pointer;
-        padding: 8px;
+        padding: 0.5rem;
+        margin-right: 0.5rem;
         border-radius: 6px;
         transition: all 0.3s ease;
         transform: scale(0.8);

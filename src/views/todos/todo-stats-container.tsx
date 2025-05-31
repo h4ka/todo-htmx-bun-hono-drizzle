@@ -11,8 +11,7 @@ export default function TodoStatsContainer() {
 
 const styles = {
 	stats: css`
-		margin-top: 30px;
-		padding-top: 20px;
+		padding-top: 1rem;
 		border-top: 1px solid #e2e8f0;
 		text-align: center;
 		color: #718096;
