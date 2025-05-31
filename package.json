@@ -13,13 +13,13 @@
 		"lint": "biome lint --fix"
 	},
 	"dependencies": {
-		"drizzle-orm": "^0.43.1",
-		"hono": "^4.7.9"
+		"drizzle-orm": "^0.44.1",
+		"hono": "^4.7.10"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/bun": "^1.2.13",
+		"@types/bun": "^1.2.15",
 		"drizzle-kit": "^0.31.1",
-		"lefthook": "^1.11.12"
+		"lefthook": "^1.11.13"
 	}
 }
