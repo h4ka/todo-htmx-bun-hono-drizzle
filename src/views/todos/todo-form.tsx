@@ -18,11 +18,11 @@ export default function TodoForm() {
 				id="content"
 				name="content"
 				type="text"
-				className={styles.input}
+				class={styles.input}
 				placeholder="write a new task here"
 				required
 			/>
-			<button type="submit" className={styles.button}>
+			<button type="submit" class={styles.button}>
 				Add
 			</button>
 		</form>

@@ -33,7 +33,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
 
 			<button
 				type="button"
-				className={styles.button}
+				class={styles.button}
 				name="todoId"
 				value={todo.id}
 				{...htmxButtonAttributes}

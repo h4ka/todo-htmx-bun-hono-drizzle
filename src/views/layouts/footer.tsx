@@ -2,8 +2,8 @@ import { css } from "hono/css";
 
 export default function Footer() {
 	return (
-		<footer className={styles.footer}>
-			<div className={styles.footerContent}>
+		<footer class={styles.footer}>
+			<div class={styles.footerContent}>
 				<p>
 					&copy; 2025 TodoApp. All rights reserved. Built with ❤️ for
 					productivity.

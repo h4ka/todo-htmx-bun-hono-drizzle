@@ -2,7 +2,7 @@ import { css } from "hono/css";
 
 export default function TodoHeader() {
 	return (
-		<section className={styles.header}>
+		<section class={styles.header}>
 			<h1>Todo</h1>
 			<p>Stay organized, stay focused</p>
 		</section>

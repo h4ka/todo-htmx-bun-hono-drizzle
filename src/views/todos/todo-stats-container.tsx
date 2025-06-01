@@ -6,7 +6,7 @@ export default function TodoStatsContainer() {
 		"hx-trigger": "load, todo-add from:body, todo-delete from:body",
 	};
 
-	return <section {...htmxAttributes} className={styles.stats} />;
+	return <section {...htmxAttributes} class={styles.stats} />;
 }
 
 const styles = {
