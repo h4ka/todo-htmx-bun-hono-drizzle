@@ -41,7 +41,8 @@ const styles = {
 	`,
 	input: css`
 		width: 100%;
-		padding: 1rem 1.5rem;
+		height: 3rem;
+		padding: 0.5rem 1.5rem;
 		border: 2px solid #e2e8f0;
 		border-radius: var(--border-radius-global);
 		font-size: 1rem;
@@ -64,8 +65,8 @@ const styles = {
         justify-content: center;
         border-radius: var(--border-radius-global);
 		border: none;
-		background: #667eea;
-		color: white;
+		background: var(--color-primary);
+		color: var(--color-primary-text);
 		font-size: 1rem;
         font-weight: 400;
         transition: all 0.15s ease;
@@ -75,7 +76,7 @@ const styles = {
 		
 		&:hover {
 			opacity: 1;
-			background: #5a67d8;
+			background: var(--color-primary-hover);
 			transform: scale(1.05);
 			font-size: 1.2rem;
 		}

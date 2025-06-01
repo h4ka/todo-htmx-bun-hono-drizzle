@@ -72,7 +72,7 @@ const styles = {
 
         &:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: rgba(0, 0, 0, 0.1) 0 5px 5px;
 
 			button[name="todoId"] {
 				opacity: 0.6;

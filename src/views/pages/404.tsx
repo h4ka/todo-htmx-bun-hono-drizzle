@@ -68,18 +68,19 @@ const styles = {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        background-color: #111827;
-        color: white;
+        background-color: var(--color-primary);
+        color: var(--color-primary-text);
         padding: 0.75rem 1.5rem;
-        border-radius: 8px;
+        border-radius: var(--border-radius-global);
         text-decoration: none;
         font-weight: 500;
         transition: background-color 0.2s ease;
-        width: 100%;
+        width: 60%;
+		height: 3rem;
         justify-content: center;
         
         &:hover {
-            background-color: #1f2937;
+            background-color: var(--color-primary-hover);
         }
     `,
 	buttonIcon: css`

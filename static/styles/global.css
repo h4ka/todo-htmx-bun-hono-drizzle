@@ -1,5 +1,7 @@
 :root {
     --color-primary: #667eea;
+    --color-primary-hover: #5a67d8;
+    --color-primary-text: white;
     --color-global-bg: linear-gradient(135deg, var(--color-primary) 0%, #764ba2 100%);
     --color-primary-surface: rgba(255, 255, 255, 0.95);
     --color-negative-surface: #e53e3e;
