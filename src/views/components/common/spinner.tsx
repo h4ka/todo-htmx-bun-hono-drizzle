@@ -28,7 +28,7 @@ const styles = {
         border-radius: 50%;
         border-style: solid;
         border-color: #e5e7eb;
-        border-top-color: #667eea;
+        border-top-color: var(--color-primary);
         animation: spin 1s linear infinite;
     `,
 	spinnerSizes: {

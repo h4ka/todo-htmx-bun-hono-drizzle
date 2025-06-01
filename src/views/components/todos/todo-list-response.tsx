@@ -1,5 +1,5 @@
 import { css } from "hono/css";
-import type { Todo } from "../../db/schema/todos";
+import type { Todo } from "../../../db/schema/todos";
 import TodoItem from "./todo-item";
 
 type TodoListResponseProps = {

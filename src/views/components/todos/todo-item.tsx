@@ -1,5 +1,5 @@
 import { css, cx } from "hono/css";
-import type { Todo } from "../../db/schema/todos";
+import type { Todo } from "../../../db/schema/todos";
 
 type TodoItemProps = {
 	todo: Todo;

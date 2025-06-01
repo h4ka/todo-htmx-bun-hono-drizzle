@@ -1,5 +1,5 @@
+import TodoCard from "../components/todos/todo-card";
 import Layout from "../layouts";
-import TodoCard from "../todos/todo-card";
 
 export default function HomePage() {
 	return (

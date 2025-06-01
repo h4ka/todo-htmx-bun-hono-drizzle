@@ -1,4 +1,4 @@
-import type { TodoStats } from "../../db/schema/todos";
+import type { TodoStats } from "../../../db/schema/todos";
 
 type TodoStatsResponseProps = {
 	stats: TodoStats;

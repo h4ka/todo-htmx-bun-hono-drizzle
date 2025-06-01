@@ -8,9 +8,9 @@ import {
 	toggleTodo,
 } from "../../models/todos";
 import { invariant } from "../../utils/invariant";
-import TodoItem from "../../views/todos/todo-item";
-import TodoListResponse from "../../views/todos/todo-list-response";
-import TodoStatsResponse from "../../views/todos/todo-stats-response";
+import TodoItem from "../../views/components/todos/todo-item";
+import TodoListResponse from "../../views/components/todos/todo-list-response";
+import TodoStatsResponse from "../../views/components/todos/todo-stats-response";
 
 const todoRoute = new Hono();
 

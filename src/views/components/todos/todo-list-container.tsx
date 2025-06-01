@@ -1,5 +1,5 @@
 import { css } from "hono/css";
-import Spinner from "../components/common/spinner";
+import Spinner from "../common/spinner";
 
 export default function TodoListContainer() {
 	const htmxAttributes = {
