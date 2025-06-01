@@ -26,8 +26,8 @@ export default function Layout({ children }: PropsWithChildren) {
 
 const styles = {
 	body: css`
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: var(--fonts-global);
+        background: var(--color-global-bg);
         overscroll-behavior: none;
         height: 100vh;
         display: flex;
