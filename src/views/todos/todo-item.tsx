@@ -57,7 +57,7 @@ const styles = {
 	list: css`
         background: #ffffff;
         border: 1px solid #e2e8f0;
-        border-radius: 12px;
+        border-radius: var(--border-radius-global);
         padding: 1rem;
         display: flex;
         align-items: center;
@@ -81,14 +81,14 @@ const styles = {
     `,
 	completed: css`
         opacity: 0.6;
-        background: #f7fafc;
+        background: var(--color-disabled-surface);
     `,
 	checkbox: css`
         appearance: none;
         width: 20px;
         height: 20px;
         border: 2px solid #cbd5e0;
-        border-radius: 6px;
+        border-radius: var(--border-radius-global);
         margin-right: 1rem;
         margin-left: 0.5rem;
         cursor: pointer;
@@ -101,14 +101,14 @@ const styles = {
         }
 
         &:checked {
-            background: #667eea;
-            border-color: #667eea;
+            background: var(--color-primary);
+            border-color: var(--color-primary);
 
             &::after {
                 content: '✓';
                 position: absolute;
-                top: -5px;
-                left: 2px;
+                top: -4px;
+                left: 1px;
                 color: white;
                 font-size: 1rem;
                 font-weight: bold;
@@ -132,16 +132,16 @@ const styles = {
     `,
 	completedText: css`
         text-decoration: line-through;
-        color: #6b7280;
+        color: var(--color-disabled-text);
     `,
 	button: css`
         background: none;
         border: none;
-        color: #e53e3e;
+        color: var(--color-negative-surface);
         cursor: pointer;
         padding: 0.5rem;
         margin-right: 0.5rem;
-        border-radius: 6px;
+        border-radius: var(--border-radius-global);
         transition: all 0.3s ease;
         transform: scale(0.8);
         font-size: 0.6rem;
@@ -150,7 +150,7 @@ const styles = {
 
         &:hover {
             opacity: 1;
-            background: #fed7d7;
+            background: var(--color-negative-surface-hover);
             transform: scale(1.1);
         }
     `,

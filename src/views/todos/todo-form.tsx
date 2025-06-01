@@ -43,7 +43,7 @@ const styles = {
 		width: 100%;
 		padding: 1rem 1.5rem;
 		border: 2px solid #e2e8f0;
-		border-radius: 12px;
+		border-radius: var(--border-radius-global);
 		font-size: 1rem;
 		outline: none;
 		transition: all 0.3s ease;
@@ -62,7 +62,7 @@ const styles = {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        border-radius: 12px;
+        border-radius: var(--border-radius-global);
 		border: none;
 		background: #667eea;
 		color: white;
