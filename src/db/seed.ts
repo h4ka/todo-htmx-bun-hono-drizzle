@@ -1,9 +1,11 @@
+import delay from "../utils/delay";
 import { db } from "./index";
 import * as schema from "./schema/todos";
 
 (async () => {
 	console.log("Starting seeding.");
-	await db.insert(schema.todos).values([
+
+	const data = [
 		{
 			content: "Learn HTML",
 			done: true,
@@ -32,7 +34,14 @@ import * as schema from "./schema/todos";
 		{
 			content: "Deploy Todo App",
 		},
-	]);
+	];
+
+	for (const todo of data) {
+		console.log("Inserting: ", todo.content);
+		await delay(1000); // delay inserting to avoid timestamp collision
+		await db.insert(schema.todos).values(todo);
+		console.log("Inserted.");
+	}
 
 	console.log("Seeding complete.");
 })();
