@@ -45,11 +45,7 @@ todoRoute
 		);
 
 		const isDone = data.get("isDone");
-		invariant(!!isDone, "Todo isDone must be present");
-
-		const status =
-			isDone === "on" ? true : isDone === "off" ? false : undefined;
-		invariant(!!status, `Todo isDone must be on or off. Found ${isDone}`);
+		const status = isDone === "on";
 
 		const result = await toggleTodo(todoId, status);
 		invariant(
