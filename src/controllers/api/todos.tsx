@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+
 import {
 	addTodo,
 	deleteTodo,
@@ -26,7 +27,9 @@ todoRoute
 
 		const results = await addTodo(content);
 
-		return c.html(<TodoItem todo={results[0]} />);
+		return c.html(<TodoItem todo={results[0]} />, 201, {
+			"HX-Trigger": "todo-add",
+		});
 	})
 	.delete(async (c) => {
 		const todoId = c.req.query("todoId");

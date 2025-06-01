@@ -3,7 +3,7 @@ import { css } from "hono/css";
 export default function TodoStatsContainer() {
 	const htmxAttributes = {
 		"hx-get": "/api/todos/stats",
-		"hx-trigger": "load, todo-delete from:body",
+		"hx-trigger": "load, todo-add from:body, todo-delete from:body",
 	};
 
 	return <section {...htmxAttributes} className={styles.stats} />;
