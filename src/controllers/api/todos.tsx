@@ -5,6 +5,7 @@ import {
 	deleteTodo,
 	getTodoStats,
 	listTodos,
+	toggleTodo,
 } from "../../models/todos";
 import { invariant } from "../../utils/invariant";
 import TodoItem from "../../views/todos/todo-item";
@@ -31,12 +32,44 @@ todoRoute
 			"HX-Trigger": "todo-add",
 		});
 	})
+	.patch(async (c) => {
+		const data = await c.req.formData();
+
+		const id = data.get("id");
+		invariant(id !== undefined, "Todo id must be present");
+
+		const todoId = Number.parseInt(id as string);
+		invariant(
+			!Number.isNaN(id),
+			`Todo id must be a valid number. Found ${todoId}`,
+		);
+
+		const isDone = data.get("isDone");
+		invariant(!!isDone, "Todo isDone must be present");
+
+		const status =
+			isDone === "on" ? true : isDone === "off" ? false : undefined;
+		invariant(!!status, `Todo isDone must be on or off. Found ${isDone}`);
+
+		const result = await toggleTodo(todoId, status);
+		invariant(
+			result.length === 1,
+			"Updated result array must have exactly 1 item",
+		);
+
+		return c.html(<TodoItem key={result[0].id} todo={result[0]} />, 200, {
+			"HX-Trigger": "todo-update",
+		});
+	})
 	.delete(async (c) => {
 		const todoId = c.req.query("todoId");
 		invariant(!!todoId, "todoId must be part of query");
 
 		const id = Number.parseInt(todoId);
-		invariant(!Number.isNaN(id), "Todo id must be a number");
+		invariant(
+			!Number.isNaN(id),
+			`Todo id must be a valid number. Found ${todoId}`,
+		);
 
 		await deleteTodo(id);
 

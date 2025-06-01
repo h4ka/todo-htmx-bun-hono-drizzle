@@ -16,6 +16,14 @@ export async function deleteTodo(id: number) {
 	await db.delete(todos).where(eq(todos.id, id));
 }
 
+export async function toggleTodo(id: number, status: boolean): Promise<Todo[]> {
+	return db
+		.update(todos)
+		.set({ done: status })
+		.where(eq(todos.id, id))
+		.returning();
+}
+
 export async function getTodoStats(): Promise<TodoStats[]> {
 	return db
 		.select({

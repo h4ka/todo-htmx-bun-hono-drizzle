@@ -13,6 +13,13 @@ export default function TodoItem({ todo }: TodoItemProps) {
 		"hx-trigger": "click",
 	};
 
+	const htmxCheckboxAttributes = {
+		"hx-patch": "/api/todos",
+		"hx-target": `#todo-${todo.id}`,
+		"hx-swap": "outerHTML",
+		"hx-vals": `js:{id: ${todo.id}}`,
+	};
+
 	return (
 		<li
 			key={todo.id}
@@ -22,8 +29,10 @@ export default function TodoItem({ todo }: TodoItemProps) {
 			<label class={styles.content}>
 				<input
 					type="checkbox"
+					name="isDone"
 					class={styles.checkbox}
 					checked={todo.done}
+					{...htmxCheckboxAttributes}
 					aria-label="Mark as complete"
 				/>
 				<span class={cx(styles.text, todo.done && styles.completedText)}>
