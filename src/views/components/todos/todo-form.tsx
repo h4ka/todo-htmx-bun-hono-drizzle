@@ -1,7 +1,8 @@
 import { css } from "hono/css";
+import type HtmxAttributes from "../../../types/htmx";
 
 export default function TodoForm() {
-	const htmxFormAttributes = {
+	const htmxFormAttributes: HtmxAttributes = {
 		"hx-post": "/api/todos",
 		"hx-target": "#todo-list",
 		"hx-swap": "afterbegin",

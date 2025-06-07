@@ -1,8 +1,9 @@
 import { css } from "hono/css";
+import type HtmxAttributes from "../../../types/htmx";
 import Spinner from "../common/spinner";
 
 export default function TodoListContainer() {
-	const htmxAttributes = {
+	const htmxAttributes: HtmxAttributes = {
 		"hx-get": "/api/todos",
 		"hx-trigger": "load, todo-delete from:body",
 	};

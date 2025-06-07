@@ -1,19 +1,20 @@
 import { css, cx } from "hono/css";
 import type { Todo } from "../../../db/schema/todos";
+import type HtmxAttributes from "../../../types/htmx";
 
 type TodoItemProps = {
 	todo: Todo;
 };
 
 export default function TodoItem({ todo }: TodoItemProps) {
-	const htmxButtonAttributes = {
+	const htmxButtonAttributes: HtmxAttributes = {
 		"hx-delete": "/api/todos",
 		"hx-target": `#todo-${todo.id}`,
 		"hx-swap": "delete",
 		"hx-trigger": "click",
 	};
 
-	const htmxCheckboxAttributes = {
+	const htmxCheckboxAttributes: HtmxAttributes = {
 		"hx-patch": "/api/todos",
 		"hx-target": `#todo-${todo.id}`,
 		"hx-swap": "outerHTML",
