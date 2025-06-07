@@ -10,7 +10,8 @@
 		"update:latest": "bun update --latest",
 		"check": "biome check",
 		"format": "biome format --fix",
-		"lint": "biome lint --fix"
+		"lint": "biome lint --fix",
+		"typecheck": "tsc --noemit --project tsconfig.json"
 	},
 	"dependencies": {
 		"drizzle-orm": "^0.44.1",
