@@ -1,13 +1,11 @@
 import { css } from "hono/css";
+import BuiltWithLinks from "./footer/built-with";
 
 export default function Footer() {
 	return (
 		<footer class={styles.footer}>
 			<div class={styles.footerContent}>
-				<p>
-					&copy; 2025 TodoApp. All rights reserved. Built with ❤️ for
-					productivity.
-				</p>
+				<p>Built with</p> <BuiltWithLinks />
 			</div>
 		</footer>
 	);
@@ -25,9 +23,9 @@ const styles = {
 	footerContent: css`
 		color: rgba(255, 255, 255, 0.8);
 		font-size: 0.9rem;
-		
-		p {
-			margin: 0;
-		}
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
 	`,
 };
