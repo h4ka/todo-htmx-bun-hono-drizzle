@@ -1,5 +1,5 @@
 import { css } from "hono/css";
-import BuiltWithLinks from "./footer/built-with";
+import BuiltWithLinks from "./built-with";
 
 export default function Footer() {
 	return (

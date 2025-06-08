@@ -1,5 +1,5 @@
 import { css } from "hono/css";
-import type HtmxAttributes from "../../../types/htmx";
+import type { HtmxAttributes } from "../../../types/htmx";
 
 export default function TodoForm() {
 	const htmxFormAttributes: HtmxAttributes = {

@@ -5,7 +5,10 @@ import DrizzleIcon from "./icons/drizzle";
 import HonoIcon from "./icons/hono";
 import HtmxIcon from "./icons/htmx";
 
-function FooterLink({ children, href }: { href: string } & PropsWithChildren) {
+function LinkWithIcon({
+	children,
+	href,
+}: { href: string } & PropsWithChildren) {
 	return (
 		<a href={href} target="_blank" rel="noreferrer noopener">
 			{children}
@@ -15,17 +18,17 @@ function FooterLink({ children, href }: { href: string } & PropsWithChildren) {
 
 export default function BuiltWithLinks() {
 	return (
-		<div class={styles.links}>
-			<FooterLink href="https://bun.sh">{<BunIcon />}</FooterLink>
+		<nav class={styles.links}>
+			<LinkWithIcon href="https://bun.sh">{<BunIcon />}</LinkWithIcon>
 			{" + "}
-			<FooterLink href="https://hono.dev">{<HonoIcon />}</FooterLink>
+			<LinkWithIcon href="https://hono.dev">{<HonoIcon />}</LinkWithIcon>
 			{" + "}
-			<FooterLink href="https://htmx.org">{<HtmxIcon />}</FooterLink>
+			<LinkWithIcon href="https://htmx.org">{<HtmxIcon />}</LinkWithIcon>
 			{" + "}
-			<FooterLink href="https://orm.drizzle.team/">
+			<LinkWithIcon href="https://orm.drizzle.team/">
 				{<DrizzleIcon />}
-			</FooterLink>
-		</div>
+			</LinkWithIcon>
+		</nav>
 	);
 }
 

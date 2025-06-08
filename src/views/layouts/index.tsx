@@ -1,6 +1,6 @@
 import { Style, css } from "hono/css";
 import type { PropsWithChildren } from "hono/jsx";
-import Footer from "./footer";
+import Footer from "./footer/footer";
 import Navbar from "./navbar";
 
 export default function Layout({ children }: PropsWithChildren) {
