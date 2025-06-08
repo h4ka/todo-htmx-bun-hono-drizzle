@@ -8,7 +8,7 @@
 		"db:migrate": "bun run src/db/migrate.ts",
 		"update:check": "bun outdated",
 		"update:latest": "bun update --latest",
-		"check": "biome check",
+		"check": "bun run typecheck && biome check",
 		"format": "biome format --fix",
 		"lint": "biome lint --fix",
 		"typecheck": "tsc --noemit --project tsconfig.json"

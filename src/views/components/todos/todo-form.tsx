@@ -81,5 +81,11 @@ const styles = {
 			transform: scale(1.05);
 			font-size: 1.2rem;
 		}
-    `,
+
+		form:invalid & {
+			opacity: 0.3;
+			cursor: not-allowed;
+			pointer-events: none;
+		}
+	`,
 };
