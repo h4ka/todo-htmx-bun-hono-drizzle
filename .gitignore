@@ -6,4 +6,3 @@ node_modules/
 
 # Database
 sqlite.db
-drizzle
