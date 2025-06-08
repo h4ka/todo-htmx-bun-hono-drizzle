@@ -1,11 +1,15 @@
 import { css } from "hono/css";
-import type HtmxAttributes from "../../../types/htmx";
+import { CustomHtmxTrigger, type HtmxAttributes } from "../../../types/htmx";
 
 export default function TodoStatsContainer() {
 	const htmxAttributes: HtmxAttributes = {
 		"hx-get": "/api/todos/stats",
-		"hx-trigger":
-			"load, todo-add from:body, todo-delete from:body, todo-update from:body",
+		"hx-trigger": `
+			load, 
+			${CustomHtmxTrigger.TODO_ADD} from:body, 
+			${CustomHtmxTrigger.TODO_DELETE} from:body, 
+			${CustomHtmxTrigger.TODO_UPDATE} from:body
+		`,
 	};
 
 	return <section {...htmxAttributes} class={styles.stats} />;

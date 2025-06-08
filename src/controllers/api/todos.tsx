@@ -7,6 +7,7 @@ import {
 	listTodos,
 	toggleTodo,
 } from "../../models/todos";
+import { CustomHtmxTrigger } from "../../types/htmx";
 import { invariant } from "../../utils/invariant";
 import TodoItem from "../../views/components/todos/todo-item";
 import TodoListResponse from "../../views/components/todos/todo-list-response";
@@ -29,7 +30,7 @@ todoRoute
 		const results = await addTodo(content);
 
 		return c.html(<TodoItem todo={results[0]} />, 201, {
-			"HX-Trigger": "todo-add",
+			"HX-Trigger": CustomHtmxTrigger.TODO_ADD,
 		});
 	})
 	.patch(async (c) => {
@@ -54,7 +55,7 @@ todoRoute
 		);
 
 		return c.html(<TodoItem key={result[0].id} todo={result[0]} />, 200, {
-			"HX-Trigger": "todo-update",
+			"HX-Trigger": CustomHtmxTrigger.TODO_UPDATE,
 		});
 	})
 	.delete(async (c) => {
@@ -70,7 +71,7 @@ todoRoute
 		await deleteTodo(id);
 
 		return c.body("✔", 200, {
-			"HX-Trigger": "todo-delete",
+			"HX-Trigger": CustomHtmxTrigger.TODO_DELETE,
 		});
 	});
 

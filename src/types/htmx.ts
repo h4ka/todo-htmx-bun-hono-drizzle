@@ -32,4 +32,10 @@ type HtmxAttributes = {
 	"hx-on::after-request"?: string;
 };
 
-export default HtmxAttributes;
+enum CustomHtmxTrigger {
+	TODO_DELETE = "todo_delete",
+	TODO_ADD = "todo_add",
+	TODO_UPDATE = "todo_update",
+}
+
+export { CustomHtmxTrigger, type HtmxAttributes };
