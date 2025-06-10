@@ -49,6 +49,7 @@ const styles = {
 		fill: red;
 		opacity: 0.7;
 		&:hover {
+			transition: all 0.3s ease;
 			transform: scale(1.2);
 			opacity: 0.9;
 		}
