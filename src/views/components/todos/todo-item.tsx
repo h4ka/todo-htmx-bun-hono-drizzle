@@ -77,7 +77,7 @@ const styles = {
         align-items: center;
         justify-content: space-between;
         transition: all 0.3s ease;
-		animation: ${animations.slideIn} 1s ease;
+		animation: ${animations.slideIn} 0.5s ease;
         cursor: pointer;
 		
 		button[name="todoId"] {
