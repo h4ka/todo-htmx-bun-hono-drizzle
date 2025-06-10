@@ -1,4 +1,4 @@
-import { css, cx } from "hono/css";
+import { css, cx, keyframes } from "hono/css";
 
 type SpinnerProps = {
 	size?: "sm" | "md" | "lg" | "xl";
@@ -16,6 +16,17 @@ export default function Spinner({ size = "md" }: SpinnerProps) {
 	);
 }
 
+const animations = {
+	spin: keyframes`
+		0% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(360deg);
+		}
+	`,
+};
+
 const styles = {
 	spinnerContainer: css`
         height: 100%;
@@ -29,7 +40,7 @@ const styles = {
         border-style: solid;
         border-color: #e5e7eb;
         border-top-color: var(--color-primary);
-        animation: spin 1s linear infinite;
+		animation: ${animations.spin} 1s linear infinite;
     `,
 	spinnerSizes: {
 		sm: css`

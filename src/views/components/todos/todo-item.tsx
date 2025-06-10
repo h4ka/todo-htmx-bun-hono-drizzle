@@ -1,4 +1,4 @@
-import { css, cx } from "hono/css";
+import { css, cx, keyframes } from "hono/css";
 import type { Todo } from "../../../db/schema/todos";
 import type { HtmxAttributes } from "../../../types/htmx";
 
@@ -54,6 +54,19 @@ export default function TodoItem({ todo }: TodoItemProps) {
 	);
 }
 
+const animations = {
+	slideIn: keyframes`
+		from {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	`,
+};
+
 const styles = {
 	list: css`
         background: #ffffff;
@@ -64,7 +77,7 @@ const styles = {
         align-items: center;
         justify-content: space-between;
         transition: all 0.3s ease;
-        animation: slideIn 0.5s ease;
+		animation: ${animations.slideIn} 1s ease;
         cursor: pointer;
 		
 		button[name="todoId"] {
